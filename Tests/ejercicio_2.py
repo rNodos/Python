@@ -1,3 +1,7 @@
+#Pide al usuario dos números y muestra 
+#la suma, resta, multiplicación, división 
+#y el módulo.
+
 # input a float value for variable a here
 a = float(input("Añade un número: "))
 # input a float value for variable b here
