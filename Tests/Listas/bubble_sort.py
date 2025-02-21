@@ -23,7 +23,6 @@ print(my_list)
 """
 
 # Versión simplificada
-
 my_list = []
 num = int(input("¿Cuántos elementos deseas ordenar?: "))
 
