@@ -1,5 +1,7 @@
-def hi_all(name_1, name_2):
-    print("Hola,", name_2)
-    print("Hola,", name_1)
+def boring_function():
+    return 123
 
-hi_all("Sebastián", "Konrad")
+x = boring_function()
+
+print("La función boring_function ha devuelto su resultado. Es:", x)
+
