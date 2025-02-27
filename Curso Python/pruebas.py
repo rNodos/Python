@@ -1,23 +1,9 @@
-school_class = {}
+num = int(input("Ingresa un número: "))
 
-while True:
-    name = input("Ingresa el nombre del estudiante: ")
-    if name == '':
-        break
-    
-    score = int(input("Ingresa la calificación del estudiante (0-10): "))
-    if score not in range(0, 11):
-	    break
-    
-    if name in school_class:
-        school_class[name] += (score,)
-    else:
-        school_class[name] = (score,)
-        
-for name in sorted(school_class.keys()):
-    adding = 0
-    counter = 0
-    for score in school_class[name]:
-        adding += score
-        counter += 1
-    print(name, ":", adding / counter)
+# Completa la estructura condicional
+if num > 0:
+    print("El número es positivo.")
+elif num < 0:
+    print("El número es negativo.")
+else:
+    print("El número es cero.")
