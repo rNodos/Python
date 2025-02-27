@@ -1,9 +1,10 @@
-num = int(input("Ingresa un número: "))
+dictionary = {}
+my_list = ['a', 'b', 'c', 'd']
 
-# Completa la estructura condicional
-if num > 0:
-    print("El número es positivo.")
-elif num < 0:
-    print("El número es negativo.")
-else:
-    print("El número es cero.")
+for i in range(len(my_list) - 1):
+    dictionary[my_list[i]] = (my_list[i], )
+
+for i in sorted(dictionary.keys()):
+    k = dictionary[i]
+    print(k[0])
+
