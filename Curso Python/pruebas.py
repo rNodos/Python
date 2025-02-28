@@ -1,10 +1,5 @@
-dictionary = {}
-my_list = ['a', 'b', 'c', 'd']
+z = 0
+y = 10
+x = y < z and z > y or y < z and z < y
 
-for i in range(len(my_list) - 1):
-    dictionary[my_list[i]] = (my_list[i], )
-
-for i in sorted(dictionary.keys()):
-    k = dictionary[i]
-    print(k[0])
-
+print(x)
