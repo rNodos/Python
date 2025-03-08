@@ -1,5 +1,5 @@
-from random import randint
-    
-for i in range(2):
-   print(randint(1, 2), end='')
-    
+s1 = "Cadena en pruebas"
+
+s2 = s1.split()
+
+print(s2)
