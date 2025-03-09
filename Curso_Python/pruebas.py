@@ -1,5 +1,21 @@
-s1 = "Cadena en pruebas"
+text = input("Ingresa tu mensaje: ")
+cipher = ''
+for char in text:
+    if not char.isalpha():
+        continue
+    char = char.upper()
+    code = ord(char) + 1
+    if code > ord('Z'):
+        code = ord('A')
+    cipher += chr(code)
 
-s2 = s1.split()
+print(cipher)
 
-print(s2)
+for char in text:
+    if not char.isalpha():
+        continue
+    char = char.upper()
+    code = ord(char) - 1
+    if code > ord('Z'):
+        code = ord('A')
+    cipher += chr(code)
