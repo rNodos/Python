@@ -7,4 +7,5 @@ mayor = list[0]
 for i in list:
     if i > mayor:
         mayor = i
-    print(mayor)
+
+print(mayor)

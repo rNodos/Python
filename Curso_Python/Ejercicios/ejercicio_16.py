@@ -37,6 +37,9 @@ while True:
         elif user == 4:
             print("\nSaliendo del cajero")
             break
+        
+        elif user == 0 or user > 5:
+            print("\nIngresa una de las opciones en pantalla.")
 
     except ValueError:
         print("\nError: Ingresa un número válido.")
