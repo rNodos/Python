@@ -4,7 +4,7 @@
 def par_o_impar(n):
     return "Par" if n % 2 == 0 else "Impar"
 
-def es_par_o_impar(n):
+def bool_parimpar(n):
     return n % 2 == 0  # True si es par, False si es impar
 
 # Año bisiesto
