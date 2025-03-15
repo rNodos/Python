@@ -1,28 +1,11 @@
-class Timer:
-    def __init__( ??? ):
-        #
-        # Escribir código aquí
-        #
+class Mouse:
+    def __init__(self, name):
+        self.my_name = name
+
 
     def __str__(self):
-        #
-        # Escribir código aquí
-        #
-
-    def next_second(self):
-        #
-        # Escribir código aquí
-        #
-
-    def prev_second(self):
-        #
-        # Escribir código aquí
-        #
+        return self.my_name
 
 
-timer = Timer(23, 59, 59)
-print(timer)
-timer.next_second()
-print(timer)
-timer.prev_second()
-print(timer)
+the_mouse = Mouse('mickey')
+print(the_mouse)  # Imprime "mickey".

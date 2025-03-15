@@ -29,7 +29,6 @@ class CountingStack(Stack):
     def pop(self):
         self.__counter += 1
         return Stack.pop(self)     
-
 	
 
 stk = CountingStack()
