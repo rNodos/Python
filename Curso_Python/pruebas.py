@@ -1,11 +1,18 @@
-class Mouse:
-    def __init__(self, name):
-        self.my_name = name
+class A:
+    def a(self):
+        print('a')
 
 
-    def __str__(self):
-        return self.my_name
+class B:
+    def a(self):
+        print('b')
 
 
-the_mouse = Mouse('mickey')
-print(the_mouse)  # Imprime "mickey".
+class C(B,A):
+    def c(self):
+        self.a()
+
+
+o = C()
+o.c()
+
