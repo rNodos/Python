@@ -1,0 +1,39 @@
+def ip_decimal_a_hexadecimal(ip):
+    octetos = ip.split(".")
+    hexadecimales = [format(int(octeto), '02X') for octeto in octetos]
+    return ".".join(hexadecimales)
+
+def ip_hexadecimal_a_decimal(ip_hex):
+    octetos = ip_hex.split(".")
+    decimales = [str(int(octeto, 16)) for octeto in octetos]
+    return ".".join(decimales)
+
+# Menú principal
+while True:
+    print("\nConversor de IPs:")
+    print("1. Decimal a Hexadecimal (ej. 192.168.1.1 → C0.A8.01.01)")
+    print("2. Hexadecimal a Decimal (ej. C0.A8.01.01 → 192.168.1.1)")
+    print("3. Salir")
+
+    opcion = input("Elige una opción: ")
+
+    if opcion == "1":
+        ip = input("Introduce una IP en formato decimal (ej. 192.168.1.1): ")
+        try:
+            print("IP en hexadecimal:", ip_decimal_a_hexadecimal(ip))
+        except Exception as e:
+            print("⚠️ IP inválida:", e)
+
+    elif opcion == "2":
+        ip_hex = input("Introduce una IP en hexadecimal (ej. C0.A8.01.01): ")
+        try:
+            print("IP en decimal:", ip_hexadecimal_a_decimal(ip_hex))
+        except Exception as e:
+            print("⚠️ IP hexadecimal inválida:", e)
+
+    elif opcion == "3":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")
