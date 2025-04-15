@@ -1,0 +1,106 @@
+def validar_decimal(ip):
+    octetos = ip.split(".")
+    if len(octetos) != 4:
+        return False
+    for o in octetos:
+        if not o.isdigit() or not 0 <= int(o) <= 255:
+            return False
+    return True
+
+def validar_binario(ip):
+    octetos = ip.split(".")
+    if len(octetos) != 4:
+        return False
+    for o in octetos:
+        if len(o) != 8 or any(c not in '01' for c in o):
+            return False
+    return True
+
+def validar_hex(ip):
+    octetos = ip.split(".")
+    if len(octetos) != 4:
+        return False
+    for o in octetos:
+        if len(o) != 2 or not all(c.upper() in "0123456789ABCDEF" for c in o):
+            return False
+    return True
+
+def decimal_a_binario(ip):
+    return ".".join(format(int(octeto), "08b") for octeto in ip.split("."))
+
+def binario_a_decimal(ip_bin):
+    return ".".join(str(int(octeto, 2)) for octeto in ip_bin.split("."))
+
+def decimal_a_hex(ip):
+    return ".".join(format(int(octeto), "02X") for octeto in ip.split("."))
+
+def hex_a_decimal(ip_hex):
+    return ".".join(str(int(octeto, 16)) for octeto in ip_hex.split("."))
+
+def binario_a_hex(ip_bin):
+    return ".".join(format(int(o, 2), "02X") for o in ip_bin.split("."))
+
+def hex_a_binario(ip_hex):
+    return ".".join(format(int(o, 16), "08b") for o in ip_hex.split("."))
+
+# Menú principal
+while True:
+    print("\n--- Conversor de IPs ---")
+    print("1. Decimal a Binario")
+    print("2. Binario a Decimal")
+    print("3. Decimal a Hexadecimal")
+    print("4. Hexadecimal a Decimal")
+    print("5. Binario a Hexadecimal")
+    print("6. Hexadecimal a Binario")
+    print("7. Salir")
+
+    opcion = input("Elige una opción: ")
+
+    if opcion == "1":
+        ip = input("Introduce IP decimal (ej. 192.168.1.1): ")
+        if validar_decimal(ip):
+            print("Binario:", decimal_a_binario(ip))
+        else:
+            print("⚠️ IP decimal no válida.")
+
+    elif opcion == "2":
+        ip = input("Introduce IP binaria (ej. 11000000.10101000.00000001.00000001): ")
+        if validar_binario(ip):
+            print("Decimal:", binario_a_decimal(ip))
+        else:
+            print("⚠️ IP binaria no válida.")
+
+    elif opcion == "3":
+        ip = input("Introduce IP decimal (ej. 192.168.1.1): ")
+        if validar_decimal(ip):
+            print("Hexadecimal:", decimal_a_hex(ip))
+        else:
+            print("⚠️ IP decimal no válida.")
+
+    elif opcion == "4":
+        ip = input("Introduce IP hexadecimal (ej. C0.A8.01.01): ").upper()
+        if validar_hex(ip):
+            print("Decimal:", hex_a_decimal(ip))
+        else:
+            print("⚠️ IP hexadecimal no válida.")
+
+    elif opcion == "5":
+        ip = input("Introduce IP binaria (ej. 11000000.10101000.00000001.00000001): ")
+        if validar_binario(ip):
+            print("Hexadecimal:", binario_a_hex(ip))
+        else:
+            print("⚠️ IP binaria no válida.")
+
+    elif opcion == "6":
+        ip = input("Introduce IP hexadecimal (ej. C0.A8.01.01): ").upper()
+        if validar_hex(ip):
+            print("Binario:", hex_a_binario(ip))
+        else:
+            print("⚠️ IP hexadecimal no válida.")
+
+    elif opcion == "7":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("❌ Opción no válida.")
