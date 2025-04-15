@@ -1,0 +1,39 @@
+def ip_decimal_a_binario(ip):
+    octetos = ip.split(".")
+    binarios = [format(int(octeto), '08b') for octeto in octetos]
+    return ".".join(binarios)
+
+def ip_binario_a_decimal(ip_binaria):
+    octetos = ip_binaria.split(".")
+    decimales = [str(int(octeto, 2)) for octeto in octetos]
+    return ".".join(decimales)
+
+# Menú principal
+while True:
+    print("\nConversor de direcciones IP:")
+    print("1. Decimal a Binario (ej. 192.168.1.1 → 11000000.10101000.00000001.00000001)")
+    print("2. Binario a Decimal (ej. 11000000.10101000.00000001.00000001 → 192.168.1.1)")
+    print("3. Salir")
+
+    opcion = input("Elige una opción: ")
+
+    if opcion == "1":
+        ip = input("Introduce una IP en formato decimal (ej. 192.168.1.1): ")
+        try:
+            print("IP en binario:", ip_decimal_a_binario(ip))
+        except Exception as e:
+            print("⚠️ IP inválida:", e)
+
+    elif opcion == "2":
+        ip_bin = input("Introduce una IP en binario (ej. 11000000.10101000.00000001.00000001): ")
+        try:
+            print("IP en decimal:", ip_binario_a_decimal(ip_bin))
+        except Exception as e:
+            print("⚠️ IP binaria inválida:", e)
+
+    elif opcion == "3":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")
